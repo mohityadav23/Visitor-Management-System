@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "fluted-protocol-222405",
+  "private_key_id": "b86601f6d32b6a724e6b6267a1a04647bee13457",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCuW3QZbaoIYGkb\nGl5LjHxub5SXuYjzga+OWwz4z/bEsP3z3VzsEMCzPwWLxfdLcQPrFDCYwHqEo4pn\nDZ3NXmmamYDVygv7qObXKpJgd0MulZhZMHltSTLb7B/7/ORI6s3QLS8YuWjxoMCs\nLSSJLmqLa8PgUKKYsRvNb98i99HUAwXjUfTPmeKBWsxmoGeweN4YEiTJVkZSXB5c\niqM6n6FLULMOuf420MAA06lqH9t+9gOy/pjZ90d+HHvYczNiQXYHuxkVFOQvLcrZ\nC2UJ1amZWrIvwDCEtu5xSHmRkbszA44U2UczB4FOxWX12AgcSmpOTM7Q4yQE17pX\nV6XjRPOjAgMBAAECggEADXSGSZ4SZJIYGlzXEQp24cjflTPeszf7VceGAT9/Qh+M\ngYDANoF2dX60DVzKIDrI/B+zPl6ANfMu75P37QzPpnwZGqZ8dT/MDKe+4w3hE9u8\nhYl9nWbsM1eOAlK6RTxFhL6v5z8Lr7XhmIflTWbVFwxKcemXGqR0Sk7LT/YC7dLr\nEhALdmhZF6LV57/mO6cUPW8rI7kBJBgq1dLKktyokhJTs7Sy1cKYT+9eEniFpWKA\nZrhMx01JYn/N/olly9fvxoe21a1oZ9pM9hrnd2j3Hjge/9IdVnloeE4CDyB41s72\nGBKeFv7oZV6Gai/VIdXHksKkxa53lSTryPVTjJnDEQKBgQDtPXS2TPzGtvdWh4Qg\nfBx2LpxjApy/l7Gxxz1Aepx6aCdJ/CGsXjziAsCs2Z9JS6HAW6cpZqtfyi6fQUFo\nW1Lch8S2ot2Hie2a+7zBjsgsHHUtRb2BRZ3lMjEMZvvA/FJ4y9RKFVOV+tjDsvMi\n3azjbufR4WyAFLd9Dg7NYufaEwKBgQC8JQkt4nfhDKAsrHomYE6Kwv65qFjAdDCk\nHIwBWnyDABHb+T2PTFgiZqq9GQoLGybRquBOZEj1taP8NaJMv5/75xjPwtAfW/8G\nnZyCtwnRp/XVGIXG4Wq8eUCpXpga5grO7LUBFXPEPJ5qMPZ+jsXzKufIdBhz0e6j\nL6qQLBGyMQKBgQDjALwNt8rjha1TgaYew0MknmMLpjNAbLEdz+w/J1NVGRYHCBdc\nbGvLQyEEA9QTeSgT/F8OEWyH4tkLj5A7f67gz5SdwWdByuutMZWii7Hj63L/18yF\nxoxYA9fE60GXnph3d2nxXUi2qOkDENbvFLfag4OUYyPDxo7wPSRSyIHbOwKBgAKR\nBsUHd9csEutJFwl6+tdNvafOshc9/oPel9JU56np0FSN29celX0ypVWbB9YK8sad\nbB3lpFElvyzrlmExo/8Nsfrzj18+JAZ1E/N8h7fCcMoNYZXK8WfMx6MH1U9YoAEe\nnYF8R23/3bFZJaOoUu70QOEtJEBANt8nAU6iK0OhAoGACqpYFbUVC25nSSONfmpm\nDhPEKATNk28ALdmPAh2PPikSTACNVIE5THMAg876EGi6O7JbndS6hraLcrtA3j1d\nXL/ntRBH0MXi8ciUAkxZEE8HEkduD3eGODvCVYDvWsQjV/HP4fgQ0djXPR0RL/j/\nvx6UpWOMSiH09xBMKadzcE8=\n-----END PRIVATE KEY-----\n",
+  "client_email": "fluted-protocol-222405@appspot.gserviceaccount.com",
+  "client_id": "109868726798505802408",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/fluted-protocol-222405%40appspot.gserviceaccount.com"
+}

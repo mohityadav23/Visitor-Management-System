@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Visitor Management System</title>
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
+   <link href="https://raw.githubusercontent.com/daneden/animate.css/master/animate.css" rel="stylesheet" type="text/css">
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css" rel="stylesheet" type="text/css">
+   <link href="css/style.css" rel="stylesheet" type="text/css" />
+   <link rel="icon" href="images/favicon.png" type="image/png">
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+       <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+</head>
+<style>
+    .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+</style>
+<body class="">
+        <a href="#"  onclick="history.back();" class="animated bounceInDown" style="position:absolute; background-color: rgba(0, 0, 0, 0.6); padding: 5px;top: 0; left: 0; "><i class="medium material-icons" style="color: #fff;">chevron_left</i></a>
+
+<div class="bg "> 
+<div class="row">
+        <form class="" action="/updatedata" method="POST">
+<div class="container">
+<div class="parentbox">
+    <div class="childbox">
+            <input type="hidden" id="FName" type="text" name="FName" value=<%=FName %>>
+            <input type="hidden" id="LName" type="text" name="LName" value=<%=LName %>>
+            <input type="hidden" id="business" type="text" name="CName" value=<%=Business %>>
+            <input type="hidden" id="email" type="text" name="Email" value=<%=Email %>>
+            <input type="hidden" id="meetingWith" type="text" name="Host" value=<%=Host %>>
+            <input type="hidden" id="purposeOfTheMeeting" type="text" name="PofMeet" value=<%=Purpose %>>
+            <input type="hidden" id="Phone" type="tel" name="Phone" value=<%=Phone %>>    
+            <input type="hidden" id="nameSearch" type="tel" name="nameSearch" value=<%=VID %>>
+            <input type="hidden" id="Intime" type="text" name="Intime" value=<%=Intime %>>    
+            <input type="hidden" id="Date" type="text" name="Date" value=<%=Date %>> 
+            <input type="hidden" id="snap" type="snap" name="snap" value=<%=snap %>> 
+        <h3><i class="material-icons prefix"></i>Hello...<%=FName %> <%=LName %> <span></span></h3>
+           <div class="row">
+     
+       <div class="input-field col s6 offset-s3">
+            <img src="<%=snap %>" style="width:100px; border-radius: 100%; height:100px;"class="center">
+            <h4 class="center-align">Hope you had pleasant meeting with  <%=Host %> </h4>
+          <h4 class="center-align">Your Check in Time is <%=Intime %> </h4>
+           
+    
+        </div>
+  </div>
+        
+      <!--<div class="col s3">&nbsp;</div>
+       <div class="col s1"><i class="material-icons prefix size">tablet_android</i></div>-->
+      <!--<div class="input-field col s1">
+         
+          <input id="icon_prefix" type="text" class="inputsmaxlength="1" " maxlength="1"  >
+          
+        </div>
+         <div class="input-field col s1">
+          
+          <input  id="" type="text" class="inputs" maxlength="1"  >
+         
+        </div> -->
+      <!--  <div class="input-field col s4">
+         
+          <input id="" type="text" class="inputs mob"  >-->
+           
+          <!--<label for="icon_prefix">Purpose Of the Meeting </label>-->
+       <!-- </div>-->
+       
+
+        <div class="input-field col s12">
+          
+                <button class="waves-effect waves-light btn default" type="submit" name="action" >Check-Out</button>
+               
+        </div>
+         
+
+    </div>
+</div>
+
+</div>
+        </form>
+        <div class="gap10"></div>
+</div>
+
+</div>
+
+</body>
+</html>

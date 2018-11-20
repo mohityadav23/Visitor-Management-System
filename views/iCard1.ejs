@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Visitor Management System</title>
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
+   <link href="https://raw.githubusercontent.com/daneden/animate.css/master/animate.css" rel="stylesheet" type="text/css">
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css" rel="stylesheet" type="text/css">
+   <link href="css/style.css" rel="stylesheet" type="text/css" />
+   <link rel="icon" href="images/favicon.png" type="image/png">
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+       <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+   
+   <style type = "text/css">
+    @media print {
+  table tr td span {
+      font-size: 17px !important;
+  }
+  
+  .title_vc {
+      text-align: left;
+      display: block;
+      background-color: #999 !important;
+      -webkit-print-color-adjust: exact;
+      text-align: center
+  }
+  
+  .childbox {
+      width: auto !important;
+  }
+  
+  .parentbox {
+      height: auto !important
+  }
+  
+  .childbox h3 {
+      display: none !important
+  }
+  
+  .footer_vc {
+      display: block;
+      background-color: #999 !important;
+      -webkit-print-color-adjust: exact;
+      text-align: center
+  }
+  
+  a.btn.default {
+      display: none;
+  }
+  
+  @page {
+      size: auto;
+      margin: 0mm;
+  }
+  
+  table {
+      border-left: 1px solid #CCC;
+      border-right: 1px solid #CCC;
+      
+  }
+  table.table_width {
+      width:213px;
+      }
+  .footer_vc span{
+      display:block; font-size:10px !important; margin-bottom:0; text-align:center}
+  .table_img { 
+  width:100px; height:100px;background-image:url(images/team_logo.jpg);
+      background-position:center;}
+      }
+  </style>
+  
+</head>
+
+<body class="">
+<div class="bg "> 
+<div class="row">
+<div class="container">
+<div class="parentbox">
+    <div class="childbox">
+   
+       <h3><i class="material-icons prefix">card_membership </i> Print Your I-Card <span></span></h3>
+           <div class="row">
+     
+       <div class="input-field col s6 offset-s3">
+       <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#fff" class="table_width" style="width:213px;">
+  <tr>
+    <td class="title_vc" >Visitor ID - <%=user.VID %> </td>  
+  </tr>
+  <tr>
+    <td><div class="table_img">
+      <img src="<%=user.snap  %>" width="1366" height="666"> </div></td>
+  </tr>
+  <tr>
+    <td>
+<span class="name">Name:<%=user.FName %> <%=user.LName %> </span>
+<span class="comp">From: <%=user.Business %></span>
+<span class="mobile">Mobile: +91 <%=user.Phone %></span>
+<span class="meeting">Host: <%=user.Host %></span>
+<span class="date">Vaild till: <%=user.timestamp %></span>
+
+</td>
+  </tr>
+  <tr>
+    <td class="footer_vc" >Note : Please Retrun To Reception on Exit<br />TEAM COMPUTERS PVT.LTD<br />No.1, Mohammadpur, Bhikaji Cama Place
+        New Delhi – 110066, India</td>
+  </tr>
+</table>
+
+          
+        </div>
+  </div>
+        
+
+        <div class="input-field col s12">
+          
+                <a class="waves-effect waves-light btn default print_btn" onclick="window.print()">Print</a>
+                
+        </div>
+         
+
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+
+</body>
+</html>

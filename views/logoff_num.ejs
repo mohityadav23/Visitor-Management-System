@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Visitor Management System</title>
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
+   <link href="https://raw.githubusercontent.com/daneden/animate.css/master/animate.css" rel="stylesheet" type="text/css">
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css" rel="stylesheet" type="text/css">
+   <link href="css/style.css" rel="stylesheet" type="text/css" />
+   <link rel="icon" href="images/favicon.png" type="image/png">
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+       <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
+   <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+</head>
+
+<body class="">
+    <a href="#"  onclick="history.back();" class="animated bounceInDown" style="position:absolute; background-color: rgba(0, 0, 0, 0.6); padding: 5px;top: 0; left: 0; "><i class="medium material-icons" style="color: #fff;">chevron_left</i></a>
+<div class="bg "> 
+<div class="row">
+<div class="w80">
+<div class="parentbox">
+    <div class="childbox">
+   
+       <h3><i class="material-icons prefix">beenhere </i> logoff Process  <span></span></h3>
+           <div class="row">
+     <form method="POST" action="/submit">
+      
+       <div class="input-field col s6 offset-s3">
+          <h4 class="center-align">Please enter the Visitor ID Card Number</h4>
+        </div>
+  </div>
+  <div class="row">
+      <div class="col s3">&nbsp;</div>
+       <div class="col s1"><i class="material-icons prefix size">tablet_android</i></div>
+    
+        <div class="input-field col s4">
+         
+          <input id="Phone" type="text" class="inputs mob" name="idcard" autocomplete="off">
+
+        </div>
+       
+
+        <div class="input-field col s12">
+          
+                <button class="waves-effect waves-light btn default"  type="submit" name="action" >Check-Out<i class="material-icons prefix back">navigate_next</i></button>
+        </div>
+         
+    </form>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<script>   
+          
+    const alert = <%= alert %>;
+      if (alert === true) {
+        swal("Oops!", "InVaild ID-Card, Please Check the ID Card Number", "error");
+      }
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+indexes:
+
+- kind: VData
+  properties:
+  - name: FName
+  - name: OutTime
+  - name: Date
+    direction: desc
+
+
+ - kind: PData
+  properties:
+  - name: FName
+  - name: Intime
+  - name: Date
+    direction: desc   
+
+   - kind: PData
+  properties:
+  - name: FName
+  - name: MeetingDate
+  - name: Date
+    direction: desc     

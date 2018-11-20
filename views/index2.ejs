@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Visitor Management System</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="css/datepicker3.css" rel="stylesheet">
+<link href="css/styles-2.css" rel="stylesheet">
+<link rel="icon" href="images/favicon.png" type="image/png">
+
+<script src="js/lumino.glyphs.js"></script>
+
+<style>
+/* Style the tab */
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+   /* border: 1px solid #ccc;*/
+    border-top: none;
+}
+.gap10{
+	display:block; height:10px; clear:both
+	}
+.tab1 {}
+.tab1 button {
+	background:#ffb53e;padding: 3px 10px;
+    height: 30px;
+    line-height: normal; border:0; font-size:14px;}
+</style>
+
+
+<!--Icons-->
+
+<!--[if lt IE 9]>
+<script src="js/html5shiv.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+
+</head>
+
+<body >
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#"><span></span>Visitor Management System</a>
+				<ul class="user-menu">
+					<li class="dropdown pull-right">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> User <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="#"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Profile</a></li>
+							<li><a href="#"><svg class="glyph stroked gear"><use xlink:href="#stroked-gear"></use></svg> Settings</a></li>
+							<li><a href="#"><svg class="glyph stroked cancel"><use xlink:href="#stroked-cancel"></use></svg> Logout</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+							
+		</div><!-- /.container-fluid -->
+	</nav>
+		
+	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
+		<!--<form role="search">
+			<div class="form-group">
+				<input type="text" class="form-control" placeholder="Search">
+			</div>
+		</form> -->
+		<ul class="nav menu">
+			<li class="active"><a href="index.html"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> Dashboard</a></li>
+			<li><a href="/index3.html"><svg class="glyph stroked tablet"><use xlink:href="#stroked-tablet-1"/></svg>Application</a></li>
+			<li><a href="/pre"><svg class="glyph stroked male user "><use xlink:href="#stroked-male-user"/></svg>Pre-Registered Visitor</a></li>
+			<li><a href="/Ruser"><svg class="glyph stroked clipboard with paper"><use xlink:href="#stroked-clipboard-with-paper"/></svg>Registered Visitor</a></li>
+			<li><a href="/calender"><svg class="glyph stroked clipboard with paper"><use xlink:href="#stroked-clipboard-with-paper"/></svg>Calender</a></li>
+			
+			<li role="presentation" class="divider"></li>
+			<li><a href="login.html"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Login Page</a></li>
+		</ul>
+
+	</div><!--/.sidebar-->
+		
+	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">			
+		<div class="row">
+
+			  
+			<ol class="breadcrumb">
+				<li><a href="#"><svg class="glyph stroked home"><use xlink:href="#stroked-home"></use></svg></a></li>
+				<li class="active">Icons</li>
+			</ol>
+		</div><!--/.row-->	
+		<div class="row">
+			<div class="col-xs-12 col-md-6 col-lg-3">
+				<div class="panel panel-blue panel-widget ">
+					<div class="row no-padding">
+						<div class="col-sm-3 col-lg-5 widget-left">
+								<svg class="glyph stroked female user"><use xlink:href="#stroked-female-user"/></svg>
+							</div>
+						<div class="col-sm-9 col-lg-7 widget-right">
+							<div class="large"><%=Tcount %></div>
+							<div class="text-muted">Visitors-In</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-md-6 col-lg-3">
+				<div class="panel panel-orange panel-widget">
+					<div class="row no-padding">
+						<div class="col-sm-3 col-lg-5 widget-left">
+								<svg class="glyph stroked app window with content"><use xlink:href="#stroked-app-window-with-content"/></svg>
+							</div>
+						<div class="col-sm-9 col-lg-7 widget-right">
+							<div class="large"><%=pTcount %></div>
+							<div class="text-muted">Pre-registered</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-md-6 col-lg-3">
+				<div class="panel panel-teal panel-widget">
+					<div class="row no-padding">
+						<div class="col-sm-3 col-lg-5 widget-left">
+							<svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg>
+						</div>
+						<div class="col-sm-9 col-lg-7 widget-right">
+							<div class="large"><%=PTTcount %></div>
+							<div class="text-muted">Expected Visitors</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-md-6 col-lg-3">
+				<div class="panel panel-red panel-widget">
+					<div class="row no-padding">
+						<div class="col-sm-3 col-lg-5 widget-left">
+							<svg class="glyph stroked app-window-with-content"><use xlink:href="#stroked-app-window-with-content"></use></svg>
+						</div>
+						<div class="col-sm-9 col-lg-7 widget-right">
+							<div class="large">2</div>
+							<div class="text-muted">Total Visitors</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!--/.row-->
+		
+		
+		
+							
+		<div class="row">
+			<div class="col-md-8">
+			
+				<div class="panel panel-default">
+					<div class="panel-heading" id="accordion">
+
+					
+                    
+                  <div class="col-md-5g"> <div class="tab1">
+  <button class="tablinks" onclick="openCity(event, 'London')">Visitors</button>
+  <button class="tablinks" onclick="openCity(event, 'Paris')">Pre-Registered Visitors</button>
+  
+</div></div>
+                    </div>
+                    <div class="clearfix"></div>
+                   
+					<div class="panel-body"  style="padding-top:0">
+                    
+              <div id="London" class="tabcontent" style="display:block;padding:0; margin:0">
+ <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-hover" >
+  <tr>
+    <td>Visitor</td>
+    <td>Information</td>
+    <td>Host(Meeting With)</td>
+	<td>Purpose Of the Meeting</td>
+	<th>Signed In</th>
+	<th>Signed Out</th>
+  </tr>
+  <% for(var i=0; i < data.length; i++) { %>
+  <tr>
+	<td><img src="<%- data[i].snap %>" alt="" style="width: 60px; height: 60px;border-radius: 50%; margin: 7px;object-fit: cover;object-position: center right"></td>
+	<td><strong><%- data[i].FName %>&nbsp;<%- data[i].LName %></strong></br>From:&nbsp;<%- data[i].Business%></br>Mobile:&nbsp;<%- data[i].Phone%></td>
+	<td><%- data[i].Host%></td>
+	<td><%- data[i].Purpose%></td>
+	<td><%- data[i].INtime%></td>
+	<form method="POST" action="/loggingoff">
+	<input type="hidden" name="idcard" value=<%=data[i].VID %>>
+	<input type="hidden" id="FName" type="text" name="FName" value=<%=data.FName %>>
+	<input type="hidden" id="LName" type="text" name="LName" value=<%=data.LName %>>
+	<input type="hidden" id="business" type="text" name="CName" value=<%=data.Business %>>
+	<input type="hidden" id="email" type="text" name="email" value=<%=data.Email %>>
+	<input type="hidden" id="meetingWith" type="text" name="Host" value=<%=data.Host %>>
+	<input type="hidden" id="purposeOfTheMeeting" type="text" name="PofMeet" value=<%=data.Purpose %>>
+	<input type="hidden" id="Phone" type="tel" name="Phone" value=<%=data.Phone %>>    
+	<input type="hidden" id="nameSearch" type="tel" name="nameSearch" value=<%=data.VID %>>
+	<input type="hidden" id="Intime" type="text" name="Intime" value=<%=data.Intime %>>    
+	<input type="hidden" id="Date" type="date" name="Date" value=<%=data.Date %>>
+	<input type="hidden" id="snap" type="text" name="snap" value=<%=data.snap %>>
+	<td><button class="button button1" type="submit" name="action" style="color: rgb(251, 251, 251);background-color: rgb(15, 131, 25);border-radius: 8px;transition: all .5s;    padding-left: 8px;padding-right: 8px;width: 88px;margin-right: 32px;"><i>Sign-Out</i></button></td>
+</form>
+  </tr>
+  <% } %>
+</table>
+
+</div>
+
+<div id="Paris" class="tabcontent "style="padding:0; margin:0">
+ <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-hover" >
+		<form method="POST" action="/adddatato">
+  <tr>
+		<td>Visitor Information</td>
+		<td>Metting Date</td>
+		<td>Host(Meeting With)</td>
+		<td>Purpose Of the Meeting</td>
+		<th>Signed In</th>
+  </tr>
+  <% for(var i=0; i < pdata.length; i++) { %>
+  <tr>
+		<td><strong><%- pdata[i].FName %>&nbsp;<%- pdata[i].LName %></strong></br>&nbsp;<%- pdata[i].Business%></br>&nbsp;<%- pdata[i].Phone%></td>
+		<td><%- pdata[i].MeetingDate%></td>
+		<td><%- pdata[i].Host%></td>
+		<td><%- pdata[i].Purpose%></td>
+		
+		<input type="hidden" id="FName" type="text" name="FName" value=<%=pdata[i].FName %>>
+		<input type="hidden" id="LName" type="text" name="LName" value=<%=pdata[i].LName %>>
+		<input type="hidden" id="business" type="text" name="CName" value=<%=pdata[i].Business %>>
+		<input type="hidden" id="email" type="text" name="Email" value=<%=pdata[i].Email %>>
+		<input type="hidden" id="meetingWith" type="text" name="Host" value=<%=pdata[i].Host %>>
+		<input type="hidden" id="purposeOfTheMeeting" type="text" name="PofMeet" value=<%=pdata[i].Purpose %>>
+		<input type="hidden" id="Phone" type="tel" name="Phone" value=<%=pdata[i].Phone %>>    
+		<input type="hidden"  id="nameSearch" type="tel" name="nameSearch" value=<%=pdata[i].VID %>>
+		<input type="hidden"  id="timestamp" type="date" name="timestamp" value=<%=pdata[i].timestamp %>>
+		<input type="hidden"  id="hemail" type="tel" name="hemail" value=<%=pdata[i].HostEmail %>>
+		<input type="hidden"  id="Date" type="tel" name="Date" value=<%=pdata[i].MeetingDate %>>
+			<td><button class="button button1" type="submit" name="action" style="color: rgb(251, 251, 251);background-color: rgb(15, 131, 25);border-radius: 8px;transition: all .5s;    padding-left: 8px;padding-right: 8px;width: 88px;margin-right: 32px;"><i>Sign-In</i></button></td>
+		</form>
+		
+	  </tr>
+	  <% } %>
+</table>
+</div>
+
+
+		<div class="gap10"></div>				
+
+					</div>
+					
+					<div class="panel-footer">
+						
+					</div>
+				</div>
+				
+			</div><!--/.col-->
+			<div class="col-md-4">
+			
+				<div class="panel panel-blue">
+					<div class="panel-heading dark-overlay"><svg class="glyph stroked clipboard-with-paper"><use xlink:href="#stroked-clipboard-with-paper"></use></svg>Today's Expected Visitor</div>
+					<div class="panel-body">
+						<table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-hover" >
+							<form method="POST" action="/adddatato">
+					  <tr>
+							
+					  </tr>
+					  <% for(var i=0; i < PTTdata.length; i++) { %>
+					  <tr>
+							<td><strong><%- PTTdata[i].FName %>&nbsp;<%- PTTdata[i].LName %></strong>&nbsp;(<%- PTTdata[i].Business%>&nbsp;<%- PTTdata[i].Phone%>)Coming to Meet:<strong><%- PTTdata[i].Host%></strong></td>
+							
+							<input type="hidden" id="FName" type="text" name="FName" value=<%=PTTdata[i].FName %>>
+							<input type="hidden" id="LName" type="text" name="LName" value=<%=PTTdata[i].LName %>>
+							<input type="hidden" id="business" type="text" name="CName" value=<%=PTTdata[i].Business %>>
+							<input type="hidden" id="email" type="text" name="Email" value=<%=PTTdata[i].Email %>>
+							<input type="hidden" id="meetingWith" type="text" name="Host" value=<%=PTTdata[i].Host %>>
+							<input type="hidden" id="purposeOfTheMeeting" type="text" name="PofMeet" value=<%=PTTdata[i].Purpose %>>
+							<input type="hidden" id="Phone" type="tel" name="Phone" value=<%=PTTdata[i].Phone %>>    
+							<input type="hidden"  id="nameSearch" type="tel" name="nameSearch" value=<%=PTTdata[i].VID %>>
+							<input type="hidden"  id="timestamp" type="date" name="timestamp" value=<%=PTTdata[i].timestamp %>>
+							<input type="hidden"  id="hemail" type="tel" name="hemail" value=<%=PTTdata[i].HostEmail %>>
+							<input type="hidden"  id="Date" type="tel" name="Date" value=<%=PTTdata[i].MeetingDate %>>
+							<!--/.sidebar	<td><button class="button button1" type="submit" name="action" style="color: rgb(251, 251, 251);background-color: rgb(15, 131, 25);border-radius: 8px;transition: all .5s;    padding-left: 8px;padding-right: 8px;width: 88px;margin-right: 32px;"><i>Sign-In</i></button></td>
+							</form>
+							-->
+						  </tr>
+						  <% } %>
+					</table>
+							
+					</div>
+				
+				</div>
+								
+			</div>
+			
+		</div><!--/.row-->
+	</div>	<!--/.main-->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <script>
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+</script>
+</body>
+
+</html>

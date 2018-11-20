@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Visitor Management System</title>
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
+   <link href="https://raw.githubusercontent.com/daneden/animate.css/master/animate.css" rel="stylesheet" type="text/css">
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css" rel="stylesheet" type="text/css">
+   <link href="css/style.css" rel="stylesheet" type="text/css" />
+   <link rel="icon" href="images/favicon.png" type="image/png">
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+       <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+   <script>
+   $(document).ready(function() {
+    $('select').material_select();
+ });
+   </script>
+</head>
+
+<body class="">
+    <a href="#"  onclick="history.back();" class="animated bounceInDown" style="position:absolute; background-color: rgba(0, 0, 0, 0.6); padding: 5px;top: 0; left: 0; "><i class="medium material-icons" style="color: #fff;">chevron_left</i></a>
+<div class="bg"> 
+<div class="row">
+<div class="container">
+<div class="parentbox">
+    <div class="childbox">
+   
+       <h3><i class="material-icons prefix">face </i> Share your details using the below form <span></span></h3>
+           <div class="">
+            <form class="" action="/addname2" method="POST">
+                <input  type="hidden" id="snap" type="tel" name="snap" value=<%=snap %>>
+       <div class="input-field col s5">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="FName" type="text" name = "FName" class="validate" value="<%=FName %>">
+          <label for="icon_prefix">First Name</label>
+        </div>
+      <div class="col s2">&nbsp;</div>
+       <div class="input-field col s5">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="icon_prefix" type="text" name="LName" class="validate" value="<%=LName %>">
+          <label for="icon_prefix">Last Name</label>
+        </div>
+         <div class="input-field col s5">
+          <i class="material-icons prefix">business_center</i>
+          <input id="icon_prefix" type="text" name ="CName" class="validate" value="<%=Business %>">
+          <label for="icon_prefix">Your Company Name</label>
+        </div>
+      <div class="col s2">&nbsp;</div>
+       <div class="input-field col s5">
+          <i class="material-icons prefix">email</i>
+          <input id="icon_prefix" type="email" name="Email" class="validate" value="<%=Email %>" >
+          <label for="icon_prefix">Your Email</label>
+        </div>
+         <div class="input-field col s5">
+          <i class="material-icons prefix">record_voice_over</i>
+          <input id="icon_prefix" type="text"  name="Host" class="validate" value="<%=Host%>">
+          <label for="icon_prefix">Meeting With(Host Name)</label>
+        </div>
+      <div class="col s2">&nbsp;</div>
+       <div class="input-field col s5">
+          <i class="material-icons prefix">flag</i>
+          <select name="PofMeet" id="PofMeet" >
+              <option value=""  selected>Choose your option</option>
+              <option value="Interview">Interview</option>
+              <option value="Meeting">Meeting</option>
+              <option value="Delivery">Delivery</option>
+              <option value="Temporary Employee">Temporary Employee</option>
+              <option value="Personal">Personal(Family/Friend)</option>
+            </select>
+          <label for="icon_prefix">Purpose Of the Visit </label>
+        </div>
+        <div class="input-field col s5">
+          <i class="material-icons prefix">tablet_android</i>
+          <input id="Phone" type="tel" name="Phone" class="validate" value="<%=Phone %>">
+          <label for="icon_prefix">Mobile Number</label>
+        </div>
+        <input type="hidden" id="yourDatePicker" name="yourDatePicker"/>  
+        <input type="hidden"  id="nameSearch" name="nameSearch" />
+
+<div class="input-field col s7">
+          <p>Note: Please enter valid mobile number for verification code</p>
+         <!-- <label for="icon_prefix"></label> -->
+        </div>
+    
+         </div>
+        
+         <button class="waves-effect waves-light btn default" type="submit" name="action" id ="btnsubmit">Next <i class="material-icons prefix">navigate_next</i></button>
+    </div>
+</div>
+
+</div>
+</div>
+</form>
+</div>
+<script>
+
+
+document.getElementById("yourDatePicker").value = new Date().getTime();
+
+$("#FName").change(function() {
+    $("#nameSearch").val($("#FName").val().substring(0,3)+$("#Phone").val().substring(0,4)+ $("#yourDatePicker").val().substring(8,12));
+});
+$("#btnsubmit").click(function() {
+    $("#nameSearch").val($("#FName").val().substring(0,3)+$("#Phone").val().substring(0,4)+ $("#yourDatePicker").val().substring(8,12));
+});
+
+</script>
+
+</body>
+</html>
+
+
+
