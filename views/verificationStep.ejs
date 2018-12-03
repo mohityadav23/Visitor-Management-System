@@ -8,42 +8,124 @@
    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
    <link href="https://raw.githubusercontent.com/daneden/animate.css/master/animate.css" rel="stylesheet" type="text/css">
-   <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css" rel="stylesheet" type="text/css">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
    <link href="css/style.css" rel="stylesheet" type="text/css" />
    <link rel="icon" href="images/favicon.png" type="image/png">
    
-<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-       <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
-   <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
-   <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
 </head>
 
 <body class="">
-        <a href="#"  onclick="history.back();" class="animated bounceInDown" style="position:absolute; background-color: rgba(0, 0, 0, 0.6); padding: 5px;top: 0; left: 0; "><i class="medium material-icons" style="color: #fff;">chevron_left</i></a>
-       <!--  <a href="#" class="animated bounceInDown" style="position:absolute; background-color: rgba(0, 0, 0, 0.6); padding: 5px;top: 0; right: 0; "><i class="medium material-icons" style="color: #fff;">chevron_right</i></a>  <a href="#" onclick="history.back();" class="animated bounceInDown" style="position:absolute; top:5px; color:#FFF; left:50px; padding:3px; border-radius:2px; font-size:16px;"><i class="medium material-icons" style="position:relative; top:23px;">chevron_left</i> Back</a>-->
-<div class="bg "> 
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="/">
+            <img src="images/team_logo.jpg" width="80" height="40" class="d-inline-block align-top">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+            </div>
+    </div>
+</nav>
+
+
+<a href="#"  onclick="history.back();" class="animated bounceInDown" style="position:absolute; background-color: rgba(0, 0, 0, 0.6); padding: 5px;top: 0; left: 0; "><i class="fas fa-arrow-alt-circle-left fa-3x"></i></a>
+<div class="container">
+	<div class="row">
+		<div class="w80">
+			<div class="parentbox">
+				<div class="childbox">
+					<h3 style="margin-top:10px;">
+						<i class="fas fa-check"></i> Verification Step
+					</h3>
+					<hr>
+					<h4>Verify Your Mobile Number</h4>
+					<p class="lead">
+						Thanks for giving your details. An OTP has been sent to your Mobile Number <%=user.Phone %>. 
+						Please enter the 4 digit OTP below for Successful Registration
+					</p>
+					<form action="/otp" method="POST" autocomplete="off">
+						<div class="form-group">
+							<input type="hidden" id="FName" type="text" name="FName" value=<%=user.FName %>>
+							<input type="hidden" id="LName" type="text" name="LName" value=<%=user.LName %>>
+							<input type="hidden" id="business" type="text" name="CName" value=<%=user.Business %>>
+							<input type="hidden" id="email" type="text" name="Email" value=<%=user.Email %>>
+							<input  type="hidden" id="meetingWith" type="text" name="Host" value=<%=user.Host %>>
+							<input type="hidden" id="purposeOfTheMeeting" type="text" name="PofMeet" value=<%=user.Purpose %>>
+							<input type="hidden" id="Phone" type="tel" name="Phone" value=<%=user.Phone %>>    
+							<input type="hidden" id="otp" type="tel" name="otp" value=<%=user.otp %>>  
+							<input type="hidden" id="nameSearch" type="tel" name="nameSearch" value=<%=user.VID %>>
+							<input  type="hidden" id="oup" name="oup" />
+						</div>
+						<div class="form-group">
+							<div class="row">
+								<div class="col-sm-1">
+									<input id="oup1"  type="text" class="inputs form-control" maxlength="1" size="1" min="0" max="9" pattern="[0-9]{1}" class="validate" required="required" >
+								</div>
+								<div class="col-sm-1">
+									<input id="oup2" 	type="text" class="inputs form-control" maxlength="1" size="1" min="0" max="9" pattern="[0-9]{1}" class="validate" required="required" >
+								</div>
+								<div class="col-sm-1">
+									<input id="oup3"  type="text" class="inputs form-control" maxlength="1" size="1" min="0" max="9" pattern="[0-9]{1}" class="validate" required="required" >
+								</div>
+								<div class="col-sm-1">
+									<input id="oup4"  type="text" class="inputs form-control" maxlength="1" size="1" min="0" max="9" pattern="[0-9]{1}" class="validate" required="required">
+								</div>
+							</div>
+						</div>			
+						<button class="waves-effect waves-light btn btn-dark"  type="submit" name="action" >Verify</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<!-- <div class="bg "> 
 <div class="row">
 <div class="w80">
 <div class="parentbox">
     <div class="childbox">
    
-       <h3><i class="material-icons prefix">beenhere </i> Verification Step <span></span></h3>
+       <h3> Verification Step <span></span></h3>
            <div class="row">
      
        <div class="input-field col s6 offset-s3">
           <h4 class="center-align">Verify your mobile number</h4>
      <p class="center-align">Thanks for giving your details. An OTP has been sent to your Mobile Number <%=user.Phone %>. 
-Please enter the 4 digit OTP below for Successful Registration</p>
+        Please enter the 4 digit OTP below for Successful Registration</p>
         </div>
  
-  <form class="" action="/otp" method="POST" autocomplete="off">
+<form class="" action="/otp" method="POST" autocomplete="off">
       <div class="col s3">&nbsp;</div>
        <div class="col s12">
         <div class="center-align">
@@ -60,33 +142,21 @@ Please enter the 4 digit OTP below for Successful Registration</p>
        <input type="hidden" id="nameSearch" type="tel" name="nameSearch" value=<%=user.VID %>>
        <input  type="hidden" id="oup" name="oup" />
       
-      <!--<div class="input-field col s1">
-         
-          <input id="icon_prefix" type="text" class="inputsmaxlength="1" " maxlength="1"  >
-          
-        </div>
-         <div class="input-field col s1">
-          
-          <input  id="" type="text" class="inputs" maxlength="1"  >
-         
-        </div> -->
         <div class=" col s12">
         <div class="input-field w">
           <input id="oup1"  type="text" class="inputs" maxlength="1" size="1" min="0" max="9" pattern="[0-9]{1}" class="validate" required="required" >
            <input  id="oup2"  type="text" class="inputs" maxlength="1" size="1" min="0" max="9" pattern="[0-9]{1}" class="validate" required="required" >
             <input id="oup3"  type="text" class="inputs" maxlength="1" size="1" min="0" max="9" pattern="[0-9]{1}" class="validate" required="required" >
              <input id="oup4"  type="text" class="inputs" maxlength="1" size="1" min="0" max="9" pattern="[0-9]{1}" class="validate" required="required">
-          <!--<label for="icon_prefix">Purpose Of the Meeting </label>-->
         </div>
     </div>
 
         <div class="input-field col s12">
           
-                <button class="waves-effect waves-light btn default"  type="submit" name="action" >Verify<i class="material-icons prefix back">navigate_next</i></button>
+                
         </div>
         <div class="gap10"></div>
-         </form>
-
+</form>
     </div>
 </div>
 
@@ -94,7 +164,7 @@ Please enter the 4 digit OTP below for Successful Registration</p>
 </div>
 
 </div>
-</div>
+</div> -->
 <script>   
           
     const alert = <%= alert %>;
@@ -125,7 +195,10 @@ $(".inputs").keyup(function () {
 });
 
 </script>
-           
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
      
 

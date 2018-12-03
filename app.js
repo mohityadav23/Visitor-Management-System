@@ -1,12 +1,13 @@
 var express = require('express');
 var server = express();
+var expressHbs = require('express-handlebars');
 const https = require('https');
 const ejs = require('ejs');
 const gstore = require('gstore-node')();
 const Datastore = require('@google-cloud/datastore');
 const mimeTypes = require('mimetypes');
 const fs = require('fs');
-const projectId = 'fluted-protocol-222405';
+const projectId = 'vistor-management-system';
 var path = require("path");
 const bodyParser = require("body-parser");
 server.use(bodyParser.json({limit: '50mb'}));
@@ -19,6 +20,7 @@ var nodemailer = require('nodemailer');
 var SMTP = require('nodemailer-smtp-transport');
 const vision = require('@google-cloud/vision');
 var templates = require('./routes/templates');
+var expressLayouts = require('express-ejs-layouts');
 
 
 //Database
@@ -29,14 +31,14 @@ projectId: projectId,
 gstore.connect(datastore);
 
 //View engine setup
-
 server.set ('views',path.join(__dirname,'views'));
 server.set('view engine','ejs');
 server.engine('html',require('ejs').renderFile);
 //Set path for static assets
 server.use(express.static(path.join(__dirname,'public')));
-
 server.use('/', templates);
+server.use(expressLayouts);
+
 
 //1
 var otp = Math.floor(1000 + Math.random()*9000);
@@ -296,11 +298,6 @@ server.post('/updatedata', (req, res) => {
     },
 ];
 
-
-
-
-
-
 datastore.upsert({
   key: datastore.key(['VData', userId]),
   data: user
@@ -317,8 +314,6 @@ datastore.upsert({
   });
   
 // logout From Dashbord
-
-
 
 server.post('/loggingoff', (req, res) => {
 
@@ -393,11 +388,6 @@ datastore.upsert({
     });
   
   });
-
-
-
-
-
 
 //4
   server.get('/Home', (req, res) => {
@@ -515,7 +505,6 @@ res.render('index2.ejs',{data:data,Tcount,pdata:Pdata,PTTdata:PTdata,pTcount,PTT
 
 //calender
 
-
 // Sending mail from a form using nodemailer
 
 server.post('/sendemail', function(req, response) {
@@ -558,11 +547,7 @@ server.post('/sendemail', function(req, response) {
       //refreshToken: "1/ttwSPaHj6TqgKangbBdHomzQayhSsw3_xIA3XKiOQccLrYWFxcxKzaPAJhhQYYJs",
       //accessToken: 'ya29.GlslBhbHaNEmDAXXsx0p_kidWPa1GIePiRhFpE0LboKU-lV7dIWzKaivvNXdSqh3IAg4crPxNNZjYicUQk2gwOD3wVeRYwYgkBWs71hGwsyNoUlnfugy6l4PBrou',
     }
-
-  
   }));
-
-  
 
   var mailOptions = {
       from: 'TCPL-Visitor Management System<kiran.shetty@teamcomputers.com>',

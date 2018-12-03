@@ -30,8 +30,5 @@ router.get('/logoff', function(req, res, next){
 router.get('/kii',function(req, res, next){
     res.render("cam.html");
 })
-  
 
-
-
-  module.exports = router;
+module.exports = router;
